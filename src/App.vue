@@ -2,17 +2,20 @@
 	<div id="app">
 		<div class="container">
             <h1>Highlighter</h1>
-			<highlighter></highlighter>
+            <highlight-rules class="row justify-content-center"/>
+			<highlighter class="row justify-content-center"/>
 		</div>
 	</div>
 </template>
 
 <script>
 import Highlighter from "./components/Highlighter.vue";
+import HighlightRules from "./components/HighlightRules.vue";
 export default {
 	name: "app",
 	components: {
-		Highlighter
+        Highlighter,
+        HighlightRules
 	}
 };
 </script>
