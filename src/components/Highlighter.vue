@@ -1,9 +1,11 @@
 <template>
 	<div>
-		<div class="col-10">
-			<div id="output" class="py-3"></div>
-			<div class="input-group">
-				<input type="text" class="form-control" v-model="inputString" placeholder="Enter a string">
+		<h3>Enter A String</h3>
+		<div class="row">
+			<div class="col-12 text-center">
+				<div class="form-group">
+					<textarea type="text" class="form-control" v-model="inputString" placeholder="Enter a string"></textarea>
+				</div>
 				<button type="button" class="btn btn-primary" @click.prevent="highlightText">Highlight!</button>
 			</div>
 		</div>
@@ -11,40 +13,15 @@
 </template>
 <script>
 export default {
+	props: ["highlights"],
 	data() {
 		return {
-			//You will deliver new technology with an adorable puppy. Perfect!
 			inputString: "",
-			outputString: "",
-			highlights: [
-				{
-					startOffset: 2,
-					endOffset: 36,
-					color: "skyblue",
-					priority: 3
-				},
-				{
-					startOffset: 0,
-					endOffset: 40,
-					color: "lightpink",
-					priority: 8
-				},
-				{
-					startOffset: 24,
-					endOffset: 34,
-					color: "yellow",
-					priority: 2
-				},
-				{
-					startOffset: 50,
-					endOffset: 60,
-					color: "#d9f593",
-					priority: 0
-				}
-			]
+			outputString: ""
 		};
 	},
 	methods: {
+		//Main text highlight function
 		highlightText() {
 			this.sortByPriority();
 			let result = "";
@@ -56,7 +33,7 @@ export default {
 			for (let i = 0; i < offsetArray.length; i++) {
 				if (offsetArray[i].color != null) {
 					result +=
-						'<span style="background-color:' +
+						'<span style="background-color: #' +
 						offsetArray[i].color +
 						'; border-radius: 3px;" >' +
 						this.inputString.substr(count, offsetArray[i].span) +
@@ -86,11 +63,10 @@ export default {
 			let placement = [];
 			for (let i = 0; i < this.highlights.length; i++) {
 				let highlight = this.highlights[i];
-				for (
-					let j = highlight.startOffset;
-					j < highlight.endOffset;
-					j++
-				) {
+				let start = Number(highlight.startOffset);
+                let end = Number(highlight.endOffset);
+                
+				for (let j = start; j < end; j++) {
 					placement[j] = i;
 				}
 			}
