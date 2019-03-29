@@ -1,4 +1,4 @@
-# highlighter
+# Highlighter
 
 ## Project setup
 ```
