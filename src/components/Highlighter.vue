@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="my-3">
 		<h3>Text to Highlight</h3>
 		<div class="row">
 			<div class="col-12 text-center">

@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="my-3">
 		<button
 			class="btn btn-secondary btn-sm"
 			type="button"

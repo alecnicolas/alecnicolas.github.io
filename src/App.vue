@@ -9,7 +9,7 @@
 				<highlight-display :highlights="this.highlights"/>
 			</div>
 			<div class="card">
-				<highlighter class="my-3" :highlights="this.highlights"/>
+				<highlighter :highlights="this.highlights"/>
 				<h3>Output Text</h3>
 				<div id="output" class="output__text py-3">Example Text</div>
 			</div>
