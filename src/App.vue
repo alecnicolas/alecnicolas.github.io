@@ -2,13 +2,17 @@
 	<div id="app">
 		<div class="container mt-5">
 			<div class="text-center">
-				<h1 style="color: cornflowerblue">Highlighter 🚀</h1>
+				<h1 class="header__text">Highlight.me 🚀</h1>
 			</div>
-			<highlight-rules @add-rule="appendRule" @clear-rules="clearRules"/>
-			<highlight-display :highlights="this.highlights"/>
-			<highlighter :highlights="this.highlights" class="my-3"/>
-			<h3>Output Text</h3>
-			<div id="output" class="py-3" style="font-size: 1.25rem; overflow-wrap: break-word;">Example Text</div>
+			<div class="card">
+				<highlight-rules @add-rule="appendRule" @clear-rules="clearRules"/>
+				<highlight-display :highlights="this.highlights"/>
+			</div>
+			<div class="card">
+				<highlighter class="my-3" :highlights="this.highlights"/>
+				<h3>Output Text</h3>
+				<div id="output" class="output__text py-3">Example Text</div>
+			</div>
 		</div>
 	</div>
 </template>

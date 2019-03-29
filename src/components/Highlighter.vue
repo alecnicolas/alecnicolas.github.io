@@ -1,12 +1,12 @@
 <template>
 	<div>
-		<h3>Enter A String</h3>
+		<h3>Text to Highlight</h3>
 		<div class="row">
 			<div class="col-12 text-center">
 				<div class="form-group">
-					<textarea type="text" class="form-control" v-model="inputString" placeholder="Enter a string"></textarea>
+					<textarea type="text" class="form-control" v-model="inputString" @keyup.enter="highlightText" placeholder="Write a sentence or two"/>
 				</div>
-				<button type="button" class="btn btn-primary" @click.prevent="highlightText">Highlight!</button>
+				<button type="button" class="btn btn-primary btn-block" @click.prevent="highlightText">Apply Highlighting</button>
 			</div>
 		</div>
 	</div>
