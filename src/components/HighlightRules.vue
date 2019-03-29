@@ -14,7 +14,7 @@
 		</div>
 		<form class="row">
 			<div class="form-group col-6 col-md-3">
-				<label for="startOffset">StartOffset</label>
+				<label for="startOffset" title="Index where highlight begins">StartOffset</label>
 				<input
 					type="number"
 					id="startOffset"
@@ -25,7 +25,7 @@
 				>
 			</div>
 			<div class="form-group col-6 col-md-3">
-				<label for="endOffset">EndOffset</label>
+				<label for="endOffset" title="Index where highlight ends">EndOffset</label>
 				<input
 					type="number"
 					id="endOffset"
@@ -36,7 +36,7 @@
 				>
 			</div>
 			<div class="form-group col-6 col-md-3">
-				<label for="color">Hex Code (Color)</label>
+				<label for="color" title="The color of your highlight">Hex Code (Color)</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
 						<span class="input-group-text" id="basic-addon1">#</span>
@@ -53,7 +53,7 @@
 				</div>
 			</div>
 			<div class="form-group col-6 col-md-3">
-				<label for="priority">Priority</label>
+				<label for="priority" title="Lower numbers have higher highlight priority">Priority</label>
 				<input
 					type="number"
 					id="priority"
@@ -64,12 +64,8 @@
 				>
 			</div>
 			<div class="col-12 text-center">
-				<button type="submit" class="btn btn-primary mx-1" @click.prevent="addRule">Add Highlight</button>
-				<button
-					type="button"
-					class="btn btn-outline-primary mx-1"
-					@click.prevent="clearRules"
-				>Clear Highlights</button>
+				<button type="button" class="btn btn-danger btn-sm mx-1" @click.prevent="clearRules">Clear</button>
+				<button type="submit" class="btn btn-primary btn-sm mx-1" @click.prevent="addRule">Add Rule</button>
 			</div>
 		</form>
 	</div>
@@ -89,8 +85,12 @@ export default {
 	},
 	methods: {
 		addRule() {
-            if (this.checkForm())
+            if (this.checkForm()){
                 this.$emit("add-rule", this.form)
+                for(let k in this.form){
+                    this.form[k] = null
+                }
+            }
             else
                 this.error = true
 		},
