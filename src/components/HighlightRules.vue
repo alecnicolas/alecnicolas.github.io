@@ -36,7 +36,7 @@
 				>
 			</div>
 			<div class="form-group col-6 col-md-3">
-				<label for="color" title="The color of your highlight">Hex Code (Color)</label>
+				<label for="color" title="The color of your highlight">Color Hex</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
 						<span class="input-group-text" id="basic-addon1">#</span>
