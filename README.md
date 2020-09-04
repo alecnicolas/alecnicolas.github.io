@@ -1,3 +1,4 @@
+*Created as a take-home challenge for New Engen's Summer Internship*
 # Highlighter
 Specify your highlighting preferences and apply them to any string!
 
@@ -5,5 +6,3 @@ Specify your highlighting preferences and apply them to any string!
 - Vue.js
 - SASS
 - Netlify (For hosting the website)
-
-*Created as a take-home challenge for New Engen's Summer Internship*
